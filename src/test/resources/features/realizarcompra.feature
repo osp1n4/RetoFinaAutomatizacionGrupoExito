@@ -14,5 +14,9 @@ Característica: inciar seccion en página web www.exito.com
     Entonces el usuario debe ver un mensaje de hola cuando ingrese a su cuenta
 
 
-
+  @SeleccionarProducto
+  Escenario: El usuario esta en la pagina web
+    Dado que el usuario se dirige en la seccion de mercado de la pagina
+    Cuando selecciona el producto a comprar
+    Entonces el usuario debe ver un mensaje pago exitoso
 

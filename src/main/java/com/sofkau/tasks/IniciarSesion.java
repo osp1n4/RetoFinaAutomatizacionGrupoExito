@@ -8,25 +8,23 @@ import net.serenitybdd.screenplay.actions.Enter;
 import static com.sofkau.ui.PaginaRegistro.*;
 
 public class IniciarSesion implements Task {
-
     private String usuario;
-    private String contrasenna;
+    private String password;
 
-    public IniciarSesion conElUsuario(String usuario){
-        this.usuario=usuario;
-        return this;
-    }
-    public IniciarSesion yConLaContrasenna(String contrasenna){
-        this.contrasenna=contrasenna;
-        return this;
-    }
+    public IniciarSesion conUsuario(String usuario){
+        this.usuario = usuario; return this;}
+    public IniciarSesion conPassword(String password){
+        this.password = password; return this;}
+
 
     @Override
     public <T extends Actor> void performAs(T actor) {
         actor.attemptsTo(
-                Enter.theValue(usuario).into(CAMPO_USUARIO),
-                Enter.theValue(contrasenna).into(CAMPO_CONTRASENNA),
-                Click.on(BOTON_INICIAR_SESION)
+                Click.on(BOTON_CUENTA),
+                Click.on(INGRESAR_CON_EMAIL_Y_CONTRASENIA),
+                Enter.theValue(usuario).into(CAMPO_EMAIL),
+                Enter.theValue(password).into(CAMPO_CONTRASENIAA),
+                Click.on(BOTON_PARA_ENTRAR)
         );
     }
 
@@ -34,3 +32,4 @@ public class IniciarSesion implements Task {
         return new IniciarSesion();
     }
 }
+
