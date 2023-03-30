@@ -1,1 +1,30 @@
-<?xml version="1.0" encoding="UTF-8"?><testsuite errors="0" failures="0" name="inciar seccion en página web www.exito.com" skipped="0" tests="1" time="20.1" timestamp="2023-03-30 12:36:30"><testcase name="Iniciar sesion"/></testsuite>
+<?xml version="1.0" encoding="UTF-8"?><testsuite errors="1" failures="0" name="inciar seccion en página web www.exito.com" skipped="0" tests="2" time="46.02" timestamp="2023-03-30 01:47:56"><testcase name="Iniciar sesion"><error message="stale element reference: element is not attached to the page document&#10;  (Session info: chrome=111.0.5563.147)&#10;For documentation on this error, please visit: https://www.seleniumhq.org/exceptions/stale_element_reference.html&#10;Build info: version: '3.141.59', revision: 'e82be7d358', time: '2018-11-14T08:17:03'&#10;System info: host: 'ANTONIO', ip: '192.168.1.104', os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '11.0.15'&#10;Driver info: org.openqa.selenium.chrome.ChromeDriver&#10;Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 111.0.5563.147, chrome: {chromedriverVersion: 111.0.5563.64 (c710e93d5b63..., userDataDir: C:\Users\ospin\AppData\Loca...}, goog:chromeOptions: {debuggerAddress: localhost:52978}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: ignore, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}&#10;Session ID: e1bc0350a144b425698b42067f386d9a" type="org.openqa.selenium.StaleElementReferenceException">stale element reference: element is not attached to the page document
+  (Session info: chrome=111.0.5563.147)
+For documentation on this error, please visit: https://www.seleniumhq.org/exceptions/stale_element_reference.html
+Build info: version: '3.141.59', revision: 'e82be7d358', time: '2018-11-14T08:17:03'
+System info: host: 'ANTONIO', ip: '192.168.1.104', os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '11.0.15'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 111.0.5563.147, chrome: {chromedriverVersion: 111.0.5563.64 (c710e93d5b63..., userDataDir: C:\Users\ospin\AppData\Loca...}, goog:chromeOptions: {debuggerAddress: localhost:52978}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: ignore, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: e1bc0350a144b425698b42067f386d9a</error><system-err>stale element reference: element is not attached to the page document
+  (Session info: chrome=111.0.5563.147)
+For documentation on this error, please visit: https://www.seleniumhq.org/exceptions/stale_element_reference.html
+Build info: version: '3.141.59', revision: 'e82be7d358', time: '2018-11-14T08:17:03'
+System info: host: 'ANTONIO', ip: '192.168.1.104', os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '11.0.15'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 111.0.5563.147, chrome: {chromedriverVersion: 111.0.5563.64 (c710e93d5b63..., userDataDir: C:\Users\ospin\AppData\Loca...}, goog:chromeOptions: {debuggerAddress: localhost:52978}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: ignore, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: e1bc0350a144b425698b42067f386d9a&#13;
+com.sofkau.tasks.CompraProductoExito.performAs(IniciarSesion.java:28)&#13;
+com.sofkau.stepdefinitions.CompraProductoExitoStepDefinitions.completa_los_campos_para_iniciar_sesion(CompraProductoExitoStepDefinitions.java:29)&#13;
+io.cucumber.java.Invoker.invoke(Invoker.java:27)&#13;
+io.cucumber.java.JavaStepDefinition.execute(JavaStepDefinition.java:27)&#13;
+io.cucumber.core.runner.PickleStepDefinitionMatch.runStep(PickleStepDefinitionMatch.java:63)&#13;
+io.cucumber.core.runner.TestStep.executeStep(TestStep.java:64)&#13;
+io.cucumber.core.runner.TestStep.run(TestStep.java:49)&#13;
+io.cucumber.core.runner.PickleStepTestStep.run(PickleStepTestStep.java:46)&#13;
+io.cucumber.core.runner.TestCase.run(TestCase.java:51)&#13;
+io.cucumber.core.runner.Runner.runPickle(Runner.java:67)&#13;
+io.cucumber.junit.FeatureRunner.runChild(FeatureRunner.java:83)&#13;
+io.cucumber.junit.FeatureRunner.runChild(FeatureRunner.java:24)&#13;
+io.cucumber.junit.CucumberSerenityRunner.runChild(CucumberSerenityRunner.java:227)&#13;
+io.cucumber.junit.CucumberSerenityRunner.runChild(CucumberSerenityRunner.java:54)&#13;
+</system-err></testcase><testcase name="El usuario esta en la pagina web"/></testsuite>

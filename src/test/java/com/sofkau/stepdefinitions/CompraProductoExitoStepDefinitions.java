@@ -6,15 +6,15 @@ import io.cucumber.java.es.Cuando;
 import io.cucumber.java.es.Dado;
 import io.cucumber.java.es.Entonces;
 
-import static com.sofkau.tasks.IniciarSesion.iniciarSesion;
-import static com.sofkau.tasks.NavegarAlRegistro.navegarAlRegistro;
+import static com.sofkau.tasks.CompraProductoExito.compraProducto;
+import static com.sofkau.tasks.SeleccionarProducto.seleccionarProducto;
 import static net.serenitybdd.screenplay.actors.OnStage.theActorInTheSpotlight;
 
 public class CompraProductoExitoStepDefinitions extends Configuracion {
 
 
-    @Dado("que el usuario esta en la pagina de inicio del exito")
-    public void que_el_usuario_esta_en_la_pagina_de_inicio_del_exito() {
+    @Dado("que el usuario esta en la pagina web registrado")
+    public void que_el_usuario_esta_en_la_pagina_web_registrado() {
         configurarNavegador();
         theActorInTheSpotlight().wasAbleTo(
                 new AbrirPaginaInicial()
@@ -22,19 +22,29 @@ public class CompraProductoExitoStepDefinitions extends Configuracion {
         );
     }
 
-
-    @Cuando("completa los campos para iniciar sesion")
-    public void completa_los_campos_para_iniciar_sesion() {
+    @Cuando("selecciona los productos y se dirige apagar")
+    public void selecciona_los_productos_y_se_dirige_apagar() throws InterruptedException {
                 theActorInTheSpotlight().attemptsTo(
-                        iniciarSesion().conUsuario("ospina_88@hotmail.com")
+                        compraProducto().conUsuario("ospina_88@hotmail.com")
                                 .conPassword("Emilia#2019")
 
+
         );
+               Thread.sleep(6000);
+        theActorInTheSpotlight().attemptsTo(
+                seleccionarProducto()
+               .producto("camaron titi")
+                        .ciudad("pereira")
+                        .almacen("Exito pereira")
+                       //
+        );
+
+    }
+
+    @Entonces("el usuario debe ver un mensaje pago exitoso")
+    public void el_usuario_debe_ver_un_mensaje_pago_exitoso() {
+
     }
 
 
-    @Entonces("el usuario debe ver un mensaje de hola cuando ingrese a su cuenta")
-    public void el_usuario_debe_ver_un_mensaje_de_hola_cuando_ingrese_a_su_cuenta() {
-
-    }
 }
