@@ -49,7 +49,7 @@ public class PaginaRegistro extends PageObject {
             .located(By.xpath("(//img[@alt='Camarón tití precocido x 400 Gramo'])[1]"));
 
     public static final Target SELECCIONAR_PRODUCTO1 = Target.the("Elegir producto")
-            .located(By.xpath("(//span[@class='exito-vtex-components-4-x-buttonText' and text()='Agregar'])[2]"));
+            .located(By.xpath("(//span[@class='exito-vtex-components-4-x-buttonText' and text()='Agregar'])[4]"));
 
     public static final Target BOTON_CARRITO_COMPRA = Target.the("Boton carrito de compra")
             .located(By.xpath("//a[@class='exito-header-3-x-minicartLink']"));

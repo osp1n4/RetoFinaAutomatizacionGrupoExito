@@ -6,8 +6,10 @@ import org.openqa.selenium.By;
 
 public class ConfirmacionCompraExitosa extends PageObject {
 
-    public static final Target MENSAJE_CONFIRMACION_COMPRA  = Target.the("Boton para pagar producto")
-            .located(By.xpath("//h3[@class='mt-5']"));
+    public static final Target MENSAJE_CONFIRMACION_COMPRA  = Target.the("Mensaje de confirmacion de la compra")
+            .located(By.cssSelector("body div div div div div h3 strong"));
 
-    //h3[@class='mt-5']
 }
+
+
+//By.xpath("//strong[normalize-space()='Detalles de tu compra']")

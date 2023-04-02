@@ -6,21 +6,20 @@ import net.serenitybdd.screenplay.actions.Click;
 import net.serenitybdd.screenplay.actions.Enter;
 
 import static com.sofkau.ui.PaginaRegistro.*;
-import static com.sofkau.ui.SeleccionarProducto.CAMPO_BUSQUEDA;
 
-public class CompraProductoExito implements Task {
+public class IniciarSesion implements Task {
     private String usuario;
     private String password;
 
     private String producto;
 
-    public CompraProductoExito conUsuario(String usuario){
+    public IniciarSesion conUsuario(String usuario){
         this.usuario = usuario; return this;}
 
-    public CompraProductoExito conPassword(String password){
+    public IniciarSesion conPassword(String password){
         this.password = password; return this;}
 
-    public CompraProductoExito producto(String producto){
+    public IniciarSesion producto(String producto){
         this.producto = producto; return this;}
 
 
@@ -37,8 +36,8 @@ public class CompraProductoExito implements Task {
         );
     }
 
-    public static CompraProductoExito compraProducto(){
-        return new CompraProductoExito();
+    public static IniciarSesion iniciarSesion(){
+        return new IniciarSesion();
     }
 }
 

@@ -11,7 +11,7 @@ public class Variables {
     public static List<String> getUserPasword() throws IOException {
         List<String> credentials = new ArrayList<>();
         Properties prop = new Properties();
-        prop.load(new FileInputStream(new File("src/test/resources/file.properties")));
+        prop.load(new FileInputStream(new File("src/test/resources/carpeta.properties")));
         credentials.add(prop.getProperty("USER"));
         credentials.add(prop.getProperty("PASSWORD"));
         return credentials;

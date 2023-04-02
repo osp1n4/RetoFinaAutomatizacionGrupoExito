@@ -5,81 +5,131 @@ import com.sofkau.tasks.AbrirPaginaInicial;
 import io.cucumber.java.es.Cuando;
 import io.cucumber.java.es.Dado;
 import io.cucumber.java.es.Entonces;
+import org.apache.log4j.Logger;
+import org.junit.jupiter.api.Assertions;
 
-import static com.sofkau.tasks.ClickProducto.clickProducto;
-import static com.sofkau.tasks.CompraProductoExito.compraProducto;
+import java.io.IOException;
+import java.util.List;
+
+import static com.sofkau.questions.MensajeConfirmacionCompra.mensajeConfirmacionCompra;
+import static com.sofkau.tasks.AgregarCarritoCompra.agregarCarritoCompra;
+import static com.sofkau.tasks.IniciarSesion.iniciarSesion;
 import static com.sofkau.tasks.RealizarPago.realizarPago;
 import static com.sofkau.tasks.Refrescar.thePage;
 import static com.sofkau.tasks.SeleccionarProducto.seleccionarProducto;
+import static com.sofkau.util.Variables.getUserPasword;
+import static net.serenitybdd.screenplay.GivenWhenThen.seeThat;
 import static net.serenitybdd.screenplay.actors.OnStage.theActorInTheSpotlight;
+import static org.hamcrest.CoreMatchers.equalTo;
 
 public class CompraProductoExitoStepDefinitions extends Configuracion {
+    public static Logger LOGGER= Logger.getLogger(CompraProductoExitoStepDefinitions.class);
 
-    @Dado("que el usuario esta en la pagina de inicio")
-    public void queElUsuarioEstaEnLaPaginaDeInicio() {
-        configurarNavegador();
-        theActorInTheSpotlight().wasAbleTo(
-                new AbrirPaginaInicial()
-        );
+    private List<String> credenciales = getUserPasword();
+
+    public CompraProductoExitoStepDefinitions() throws IOException {
     }
-
-    @Cuando("el usuario completa los campos usuario y password para iniciar sesion")
-    public void elUsuarioCompletaLosCamposUsuarioYPasswordParaIniciarSesion() {
-
-
-    }
-    @Entonces("el usuario debe ver un mensaje hola en la pagina principal")
-    public void elUsuarioDebeVerUnMensajeHolaEnLaPaginaPrincipal() {
-
-    }
-
 
     @Dado("que el usuario esta en la pagina web registrado")
-    public void que_el_usuario_esta_en_la_pagina_web_registrado() {
+    public void queElUsuarioEstaEnLaPaginaWebRegistrado() {
+
         configurarNavegador();
         theActorInTheSpotlight().wasAbleTo(
                 new AbrirPaginaInicial()
-
         );
     }
 
-    @Cuando("selecciona los productos y se dirige apagar")
-    public void selecciona_los_productos_y_se_dirige_apagar() throws InterruptedException {
-        theActorInTheSpotlight().attemptsTo(
-                compraProducto()
-                        .conUsuario("ospina_88@hotmail.com")
-                        .conPassword("Emilia#2019")
+    @Cuando("el usuario ingresa los datos de registro selecciona los productos")
+    public void el_usuario_ingresa_los_datos_de_registro_selecciona_los_productos() {
+
+        try {
+            theActorInTheSpotlight().attemptsTo(
+                    iniciarSesion()
+                            .conUsuario(credenciales.get(0))
+                            .conPassword(credenciales.get(1))
+            );
+            LOGGER.info("El usuario fue registrado con exito ");
+
+        } catch (Exception e) {
+            LOGGER.info("Fallo al realizar el registro en la pagina web");
+            LOGGER.info(e.getMessage());
+            Assertions.fail();
+            quitarDriver();
+        }
+
+        try {
+            theActorInTheSpotlight().attemptsTo(
+                    thePage(),
+                    seleccionarProducto()
+                            .ciudad("Medellin")
+                            .almacen("Exito pereira")
+                            .producto("camaron titi")
+            );
+
+            LOGGER.info("El usuario selecciono los productos y registro la direccion de la tienda con exito ");
+
+        } catch (Exception e) {
+            LOGGER.info("Fallo al seleccionar los productos de la pagina web");
+            LOGGER.info(e.getMessage());
+            Assertions.fail();
+            quitarDriver();
+        }
 
 
-        );
+        try {
+            theActorInTheSpotlight().attemptsTo(
+                    agregarCarritoCompra()
+            );
 
-        theActorInTheSpotlight().attemptsTo(
-                thePage(),
-                seleccionarProducto()
-                        .ciudad("Medellin")
-                        .almacen("Exito pereira")
-                        .producto("camaron titi")
-        );
-        theActorInTheSpotlight().attemptsTo(
-                clickProducto()
-        );
-        theActorInTheSpotlight().attemptsTo(
-               // thePage(),
-                realizarPago()
-                        .conName("Nevardo Antonio")
-                        .conLastName("Ospina")
-                        .conTelefono("3147655512")
-                        .conNumeroDocumento("1093216364")
-        );
+            LOGGER.info("El usuario agrego los productos al carrito de compra con exito ");
 
+        } catch (Exception e) {
+            LOGGER.info("Fallo al realizar los registros de producto al carrito de compra");
+            LOGGER.info(e.getMessage());
+            Assertions.fail();
+            quitarDriver();
+        }
 
     }
+    @Cuando("se dirige apagar los productos")
+    public void se_dirige_apagar_los_productos() {
+        try {
+            theActorInTheSpotlight().attemptsTo(
+                    realizarPago()
+                            .conName("Nevardo Antonio")
+                            .conLastName("Ospina Zuñiga")
+                            .conTelefono("3147655512")
+                            .conNumeroDocumento("1093216364")
+            );
+            LOGGER.info("El usuario registro los datos personales con exito ");
+
+        } catch (Exception e) {
+            LOGGER.info("El registro de los datos personales fallaron");
+            LOGGER.info(e.getMessage());
+            Assertions.fail();
+            quitarDriver();
+        }
+
+    }
+
 
     @Entonces("el usuario debe ver un mensaje pago exitoso")
     public void el_usuario_debe_ver_un_mensaje_pago_exitoso() {
+        try {
+            theActorInTheSpotlight().should(
+                    seeThat(mensajeConfirmacionCompra(),equalTo("Detalles de tu compra"))
+            );
 
+            LOGGER.info("Prueba realizada con exito ");
+            quitarDriver();
+
+        } catch (Exception e) {
+            LOGGER.info(" Fallo al realizar la assercion");
+            LOGGER.info(e.getMessage());
+            Assertions.fail();
+            quitarDriver();
+        }
     }
-
 
 
 }

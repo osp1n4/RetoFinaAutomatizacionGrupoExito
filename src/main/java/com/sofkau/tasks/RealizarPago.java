@@ -51,10 +51,8 @@ public class RealizarPago implements Task {
                 Enter.theValue(lastName).into(CAMPO_DATOS_COMPRADOR_LAST_NAME),
                 Enter.theValue(telefono).into(CAMPO_DATO_NUMERO_CELULAR),
                 Enter.theValue(numeroDocumento).into(CAMPO_DATO_NUMERO_DOCUMENTO),
-                Enter.theValue(name).into(CAMPO_DATOS_COMPRADOR_NAME),
-                Enter.theValue(lastName).into(CAMPO_DATOS_COMPRADOR_LAST_NAME),
 
-                //Click.on(BOTON_CONTINUAR),
+
                 Click.on(BOTON_CONTINUAR),
 
                 Scroll.to(BOTON_FECHA_ENTREGA),
@@ -68,9 +66,6 @@ public class RealizarPago implements Task {
                 WaitUntil.the(BOTON_IR_A_PAGAR_PRODUCTO, isCurrentlyEnabled()),
                 WaitUntil.the(BOTON_IR_A_PAGAR_PRODUCTO, isClickable()),
                 Click.on(BOTON_IR_A_PAGAR_PRODUCTO)
-
-
-                //Click.on(BOTON_IR_A_PAGAR_PRODUCTO)
 
         );
     }
