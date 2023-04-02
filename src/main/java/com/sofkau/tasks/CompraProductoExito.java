@@ -16,6 +16,7 @@ public class CompraProductoExito implements Task {
 
     public CompraProductoExito conUsuario(String usuario){
         this.usuario = usuario; return this;}
+
     public CompraProductoExito conPassword(String password){
         this.password = password; return this;}
 

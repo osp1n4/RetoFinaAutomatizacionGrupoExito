@@ -6,11 +6,32 @@ import io.cucumber.java.es.Cuando;
 import io.cucumber.java.es.Dado;
 import io.cucumber.java.es.Entonces;
 
+import static com.sofkau.tasks.ClickProducto.clickProducto;
 import static com.sofkau.tasks.CompraProductoExito.compraProducto;
+import static com.sofkau.tasks.RealizarPago.realizarPago;
+import static com.sofkau.tasks.Refrescar.thePage;
 import static com.sofkau.tasks.SeleccionarProducto.seleccionarProducto;
 import static net.serenitybdd.screenplay.actors.OnStage.theActorInTheSpotlight;
 
 public class CompraProductoExitoStepDefinitions extends Configuracion {
+
+    @Dado("que el usuario esta en la pagina de inicio")
+    public void queElUsuarioEstaEnLaPaginaDeInicio() {
+        configurarNavegador();
+        theActorInTheSpotlight().wasAbleTo(
+                new AbrirPaginaInicial()
+        );
+    }
+
+    @Cuando("el usuario completa los campos usuario y password para iniciar sesion")
+    public void elUsuarioCompletaLosCamposUsuarioYPasswordParaIniciarSesion() {
+
+
+    }
+    @Entonces("el usuario debe ver un mensaje hola en la pagina principal")
+    public void elUsuarioDebeVerUnMensajeHolaEnLaPaginaPrincipal() {
+
+    }
 
 
     @Dado("que el usuario esta en la pagina web registrado")
@@ -24,20 +45,33 @@ public class CompraProductoExitoStepDefinitions extends Configuracion {
 
     @Cuando("selecciona los productos y se dirige apagar")
     public void selecciona_los_productos_y_se_dirige_apagar() throws InterruptedException {
-                theActorInTheSpotlight().attemptsTo(
-                        compraProducto().conUsuario("ospina_88@hotmail.com")
-                                .conPassword("Emilia#2019")
-
-
-        );
-               Thread.sleep(6000);
         theActorInTheSpotlight().attemptsTo(
-                seleccionarProducto()
-               .producto("camaron titi")
-                        .ciudad("pereira")
-                        .almacen("Exito pereira")
-                       //
+                compraProducto()
+                        .conUsuario("ospina_88@hotmail.com")
+                        .conPassword("Emilia#2019")
+
+
         );
+
+        theActorInTheSpotlight().attemptsTo(
+                thePage(),
+                seleccionarProducto()
+                        .ciudad("Medellin")
+                        .almacen("Exito pereira")
+                        .producto("camaron titi")
+        );
+        theActorInTheSpotlight().attemptsTo(
+                clickProducto()
+        );
+        theActorInTheSpotlight().attemptsTo(
+               // thePage(),
+                realizarPago()
+                        .conName("Nevardo Antonio")
+                        .conLastName("Ospina")
+                        .conTelefono("3147655512")
+                        .conNumeroDocumento("1093216364")
+        );
+
 
     }
 
@@ -45,6 +79,7 @@ public class CompraProductoExitoStepDefinitions extends Configuracion {
     public void el_usuario_debe_ver_un_mensaje_pago_exitoso() {
 
     }
+
 
 
 }
