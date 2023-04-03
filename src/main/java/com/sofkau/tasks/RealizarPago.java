@@ -7,6 +7,7 @@ import net.serenitybdd.screenplay.actions.Enter;
 import net.serenitybdd.screenplay.actions.Scroll;
 import net.serenitybdd.screenplay.waits.WaitUntil;
 
+import static com.sofkau.tasks.Refrescar.thePage;
 import static com.sofkau.ui.PaginaRegistro.*;
 import static net.serenitybdd.screenplay.matchers.WebElementStateMatchers.*;
 
@@ -39,18 +40,17 @@ public class RealizarPago implements Task {
 
     @Override
     public <T extends Actor> void performAs(T actor) {
+        if (!CAMPO_ACEPTAR_TERMINOS.resolveFor(actor).isSelected()) {
+            actor.attemptsTo(Click.on(CAMPO_ACEPTAR_TERMINOS));
+        }
         actor.attemptsTo(
-                Scroll.to(BOTON_IR_A_PAGAR),
-                WaitUntil.the(BOTON_IR_A_PAGAR, isPresent()),
-                WaitUntil.the(BOTON_IR_A_PAGAR, isCurrentlyVisible()),
-                WaitUntil.the(BOTON_IR_A_PAGAR, isCurrentlyEnabled()),
-                WaitUntil.the(BOTON_IR_A_PAGAR, isClickable()),
-                Click.on(BOTON_IR_A_PAGAR),
 
                 Enter.theValue(name).into(CAMPO_DATOS_COMPRADOR_NAME),
                 Enter.theValue(lastName).into(CAMPO_DATOS_COMPRADOR_LAST_NAME),
                 Enter.theValue(telefono).into(CAMPO_DATO_NUMERO_CELULAR),
                 Enter.theValue(numeroDocumento).into(CAMPO_DATO_NUMERO_DOCUMENTO),
+                Enter.theValue(name).into(CAMPO_DATOS_COMPRADOR_NAME),
+                Enter.theValue(lastName).into(CAMPO_DATOS_COMPRADOR_LAST_NAME),
 
 
                 Click.on(BOTON_CONTINUAR),

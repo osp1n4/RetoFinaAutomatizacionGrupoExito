@@ -55,7 +55,8 @@ public class PaginaRegistro extends PageObject {
             .located(By.xpath("//a[@class='exito-header-3-x-minicartLink']"));
 
     public static final Target BOTON_IR_A_PAGAR = Target.the("Boton de ir a pagar")
-            .located(By.xpath("//a[@class='btn btn-large btn-success pull-left-margin btn-place-order']"));
+            .located(By.xpath("//a[@id='cart-to-orderform']"));
+    ////a[@href='#/orderform']
 
     public static final Target CAMPO_DATOS_COMPRADOR_NAME = Target.the("Nombre del usuario apagar la factura")
             .located(By.xpath("//*[@id='client-first-name']"));
@@ -87,7 +88,8 @@ public class PaginaRegistro extends PageObject {
     public static final Target BOTON_PSE = Target.the("Forma de pago por pse")
             .located(By.xpath("//span[text()='PSE']"));
 
-
+    public static final Target CAMPO_ACEPTAR_TERMINOS = Target.the("Campo Aceptar terminos y condiciones")
+            .located(By.xpath("(//input[@type='checkbox'])[3]"));
 
     public static final Target BOTON_IR_A_PAGAR_PRODUCTO  = Target.the("Boton para pagar producto")
             .located(By.xpath("(//button[@id='payment-data-submit'])[2]"));

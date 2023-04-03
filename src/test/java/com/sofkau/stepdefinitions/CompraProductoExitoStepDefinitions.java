@@ -93,6 +93,7 @@ public class CompraProductoExitoStepDefinitions extends Configuracion {
     }
     @Cuando("se dirige apagar los productos")
     public void se_dirige_apagar_los_productos() {
+        thePage();
         try {
             theActorInTheSpotlight().attemptsTo(
                     realizarPago()

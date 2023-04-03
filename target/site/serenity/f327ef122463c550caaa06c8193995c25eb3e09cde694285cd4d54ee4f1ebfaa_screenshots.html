@@ -1,0 +1,317 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <title>Screenshots</title>
+
+<link rel="shortcut icon" type="image/x-icon" href="favicon.ico">
+<link rel="apple-touch-icon" sizes="57x57" href="apple-icon-57x57.png">
+<link rel="apple-touch-icon" sizes="60x60" href="apple-icon-60x60.png">
+<link rel="apple-touch-icon" sizes="72x72" href="apple-icon-72x72.png">
+<link rel="apple-touch-icon" sizes="76x76" href="apple-icon-76x76.png">
+<link rel="apple-touch-icon" sizes="114x114" href="apple-icon-114x114.png">
+<link rel="apple-touch-icon" sizes="120x120" href="apple-icon-120x120.png">
+<link rel="apple-touch-icon" sizes="144x144" href="apple-icon-144x144.png">
+<link rel="apple-touch-icon" sizes="152x152" href="apple-icon-152x152.png">
+<link rel="apple-touch-icon" sizes="180x180" href="apple-icon-180x180.png">
+<link rel="icon" type="image/png" sizes="192x192"  href="android-icon-192x192.png">
+<link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="96x96" href="favicon-96x96.png">
+<link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png">
+<meta name="msapplication-TileColor" content="#ffffff">
+<meta name="msapplication-TileImage" content="/ms-icon-144x144.png">
+<meta name="theme-color" content="#ffffff">
+<!--[if IE 7]>
+<!--<link rel="stylesheet" href="font-awesome/css/font-awesome-ie7.min.css">-->
+
+<link rel="stylesheet" type="text/css" href="fontawesome-free-5.7.2-web/css/all.min.css">
+<link rel="stylesheet" type="text/css" href="fontawesome-free-5.7.2-web/css/v4-shims.min.css">
+
+<!-- JQuery -->
+<script type="text/javascript" src="scripts/jquery-1.11.1.min.js"></script><link rel="stylesheet" type="text/css" href="chartist/chartist-plugin-tooltip/dist/chartist-plugin-tooltip.min.css">
+<link rel="stylesheet" type="text/css" href="chartist/dist/chartist.min.css">
+<script src="chartist/dist/chartist.min.js"></script>
+<script src="chartist/chartist-plugin-tooltip/dist/chartist-plugin-tooltip.min.js"></script>
+<!-- Required Stylesheets -->
+<link href="bootstrap-treeview/dist/bootstrap-treeview.min.css" rel="stylesheet">
+
+<!-- Required Javascript -->
+<script src="bootstrap-treeview/dist/bootstrap-treeview.min.js"></script><!-- DataTables -->
+<link type="text/css" href="datatables/1.10.20/datatables.min.css" rel="stylesheet" />
+<script type="text/javascript" src="datatables/1.10.20/datatables.min.js"></script>
+<script type="text/javascript" src="datatables/1.10.20/time-elapsed-dhms.js"></script>
+
+<link href="bootstrap/css/bootstrap.min.css" rel="stylesheet">
+<script src="bootstrap/js/bootstrap.min.js"></script>
+
+<script type="text/javascript" src="datatables/1.10.20/datatables.bootstrap4.min.js"></script>
+<link type="text/css" href="datatables/1.10.20/datatables.bootstrap4.min.css" rel="stylesheet" />
+
+<script>
+    jQuery.fn.dataTable.ext.type.order['time-elapsed-dhms-pre'] = function(data) {
+
+        var matches = data.match(/^(\d+(?:\.\d+)?)\s*([a-z]+)/i);
+        var multipliers = {
+            ms: 1,
+            s: 1000,
+            m: 60000,
+            h: 3600000,
+            d: 86400000
+        };
+
+        if (matches) {
+            var multiplier = multipliers[matches[2].toLowerCase()];
+            return parseFloat(matches[1]) * multiplier;
+        } else {
+            return -1;
+        };
+    };
+</script>
+<link rel="stylesheet" href="css/core.css"/>
+<link rel="stylesheet" href="css/link.css"/>
+<link type="text/css" media="screen" href="css/screen.css" rel="Stylesheet"/><!-- Nivo Slider -->
+<link rel="stylesheet" href="nivo-slider/3.2/nivo-slider.css" type="text/css" media="screen" />
+<link rel="stylesheet" href="nivo-slider/3.2/themes/default/default.css" type="text/css" media="screen" />
+<script src="nivo-slider/3.2/jquery.nivo.slider.pack.js" type="text/javascript"></script>
+
+    <script type="text/javascript">
+
+        function getUrlVars() {
+            var vars = {};
+            var parts = window.location.href.replace(/[?&]+([^=&]+)=([^&]*)/gi, function (m, key, value) {
+                vars[key] = value;
+            });
+            return vars;
+        }
+
+        var screenshotIndex = getUrlVars()["screenshot"];
+
+        $(window).load(function () {
+            $('#slider').nivoSlider({
+                startSlide: screenshotIndex,
+                effect: 'fade',
+                animSpeed: 200,
+                manualAdvance: true
+            });
+        });
+
+        $(window).keydown(function(e) {
+            switch(e.which) {
+                case 37:
+                    $('a.nivo-prevNav').click();
+                    break;
+                case 39:
+                    $('a.nivo-nextNav').click();
+                    break;
+            }
+        });
+    </script>
+
+</head>
+
+<body>
+<div id="topheader">
+    <div id="topbanner">
+        <div id="logo"><a href="index.html"><img src="images/serenity-logo.png" border="0"/></a></div>
+        <div id="projectname-banner" style="float:right">
+            <span class="projectname">
+                <span class="projecttitle"></span>
+                <span class="projectsubtitle"></span>
+            </span>
+        </div>
+    </div>
+</div>
+
+<div class="middlecontent">
+    <div id="contenttop">
+        <div class="middlebg">
+            <span class="breadcrumbs">
+                <a href="index.html">Home</a>
+                > <span class="truncate-40"><a
+                    href="aa9f5457644316ca39fb3d064ee68b599401028b1a6e05c8a8fc50186a7291b1.html">Realizar Compra En La P&aacute;gina Web Www.Exito.Com</a></span>
+                > <span class="truncate-60"><a
+                    href="f327ef122463c550caaa06c8193995c25eb3e09cde694285cd4d54ee4f1ebfaa.html">Compra exitosa </a></span>
+                > Screenshots
+            </span>
+        </div>
+        <div class="rightbg"></div>
+    </div>
+
+    <div class="clr"></div>
+
+    <!--/* starts second table*/-->
+<div>
+    <ul class="nav nav-tabs" role="tablist">
+        <li class="active">
+            <a href="#"><i class="fa fa-check-square-o"></i> Overall Test Results</a>
+        </li>
+        <li >
+            <a href="capabilities.html"><i class="fa fa-book"></i> Requirements</a>
+        </li>
+        <li >
+            <a href="576946480b52ad056d6f5bddf874399c83582ecf90963cc074a14c70580e7d9f.html"><i class="fa fa-comments-o"></i> Features</a>
+        </li>
+    </ul>
+    <span class="date-and-time"><a href="build-info.html"><i class="fa fa-info-circle"></i></a> Report generated 02-04-2023 21:24</span>
+    <br style="clear:left"/>
+</div>
+
+    <div class="clr"></div>
+
+
+    <div id="contentbody">
+        <div class="titlebar">
+            <div class="story-title">
+                <table class="outcome-header">
+                    <tr>
+                        <td>
+                            <div>
+                                <h3 class="discreet-story-header">
+                                    <i class="fa fa-2x fa-comments-o"></i>
+                                    <span class="story-header-title">Realizar Compra En La Página Web Www.Exito.Com </span>
+                                    <span class="badge tag-badge" style="">Feature</span>
+                                </h3>
+
+                                <div class="discreet-requirement-narrative-title">
+                                yo como usuario registrado de la página web del éxito<br />
+quiero seleccionar  productos agregandolo al carrito de compra<br />
+para poder comprar los productos de mi interés
+                                </div>
+                            </div>
+
+                        </td>
+                        <td valign="top" align="right">
+                            <p class="tag">
+                                <span class="badge tag-badge" style="background:default;"
+                                    <i class="fa fa-tag"></i>&nbsp;<a class="tagLink" style="background:default;" href="b7e33abe7619d82cefda21fe358074425199aafab4998745a7f9803cfbdd6a6a.html">Compra
+                                    (tag)</a>
+                                </span>
+                            </p>
+                        </td>
+                    </tr>
+                </table>
+            </div>
+            <div class="story-title">
+                <table class="outcome-header">
+                    <tr>
+                        <td colspan="2" class="test-title-bar">
+                            <span class="outcome-icon"><a href='##beforetable'><i class='fa fa-check-circle-o success-icon fa-2x' title='SUCCESS'></i></a></span>
+                            <span class="test-case-title">
+                                <span class="success-color">Compra exitosa
+                                    <span class="related-issue-title"></span>
+                                </span>
+                            </span>
+
+                        </td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+    </div>
+
+    <div class="clr"></div>
+
+
+    <div id="beforetable"></div>
+    <div id="contenttilttle">
+        <div class="slider-wrapper theme-default">
+            <div id="slider">
+                <img src="277c2aa155fcadab46bcd80bd214dbb50bd6dbf258857e03092a501fdebfe75f.png" title=" Dado que el usuario esta en la pagina web registrado" width="1920"/>
+                <img src="277c2aa155fcadab46bcd80bd214dbb50bd6dbf258857e03092a501fdebfe75f.png" title=" Nevardo abrir pagina inicial" width="1920"/>
+                <img src="277c2aa155fcadab46bcd80bd214dbb50bd6dbf258857e03092a501fdebfe75f.png" title=" Nevardo opens the Confirmacion compra exitosa" width="1920"/>
+                <img src="ec5339bc6f8db309679c1f0a836c7ec1eff951cfd4a6beda095ddda89167a13d.png" title=" Nevardo opens the Confirmacion compra exitosa (completed)" width="1920"/>
+                <img src="09f087c662284707292376dd08253e6d2beffe819f35a437834bfd7dd9fa783f.png" title=" Nevardo abrir pagina inicial (completed)" width="1920"/>
+                <img src="09f087c662284707292376dd08253e6d2beffe819f35a437834bfd7dd9fa783f.png" title=" Dado que el usuario esta en la pagina web registrado (completed)" width="1920"/>
+                <img src="8a109ab58e664d324c5a2b35f0cc8f3758e38fdb10b5d27c6d219017f84b8d3e.png" title=" Cuando el usuario ingresa los datos de registro selecciona los productos" width="1920"/>
+                <img src="8a109ab58e664d324c5a2b35f0cc8f3758e38fdb10b5d27c6d219017f84b8d3e.png" title=" Nevardo iniciar sesion" width="1920"/>
+                <img src="8a109ab58e664d324c5a2b35f0cc8f3758e38fdb10b5d27c6d219017f84b8d3e.png" title=" Nevardo clicks on Campo mi cuenta " width="1920"/>
+                <img src="6acddcf216c384271aed55e32c84817b1fbe5070330f8e2ba9264c569bb367a6.png" title=" Nevardo clicks on Campo mi cuenta  (completed)" width="1920"/>
+                <img src="6acddcf216c384271aed55e32c84817b1fbe5070330f8e2ba9264c569bb367a6.png" title=" Nevardo clicks on Boton ingresar con email y contrasenna" width="1920"/>
+                <img src="e8fcb002b0a79d04014be2a66bf69e7c1882a4333db648cb3ea48e0f14706326.png" title=" Nevardo clicks on Boton ingresar con email y contrasenna (completed)" width="1920"/>
+                <img src="e8fcb002b0a79d04014be2a66bf69e7c1882a4333db648cb3ea48e0f14706326.png" title=" Nevardo enters 'ospina_88@hotmail.com' into Campo del email" width="1920"/>
+                <img src="a1964506a9fc842a1446554dad1b73b853d188305d26a498a1e77ffe352099d6.png" title=" Nevardo enters 'ospina_88@hotmail.com' into Campo del email (completed)" width="1920"/>
+                <img src="a1964506a9fc842a1446554dad1b73b853d188305d26a498a1e77ffe352099d6.png" title=" Nevardo enters 'Emilia#2019' into Campo del contrasenna" width="1920"/>
+                <img src="99ff7f51a8fb850a95ff4a7a2041b5d0680882fe99fc0de66821672253df9794.png" title=" Nevardo enters 'Emilia#2019' into Campo del contrasenna (completed)" width="1920"/>
+                <img src="99ff7f51a8fb850a95ff4a7a2041b5d0680882fe99fc0de66821672253df9794.png" title=" Nevardo clicks on Boton para entrar en la pagina" width="1920"/>
+                <img src="b2ad28efeb441176c274641951d4cc1ad49863f2eb618f8e55eba2ef93ae7c37.png" title=" Nevardo clicks on Boton para entrar en la pagina (completed)" width="1920"/>
+                <img src="b2ad28efeb441176c274641951d4cc1ad49863f2eb618f8e55eba2ef93ae7c37.png" title=" Nevardo iniciar sesion (completed)" width="1920"/>
+                <img src="5963a3021d97cc23238df32883a88da0042f4b5906360a2a6c92e570d917264a.png" title=" Nevardo refreshes the browser" width="1920"/>
+                <img src="6437e67d96c628efe2026ce6edb0bfd6fd11efb8ab44447e02bd686e549275d3.png" title=" Nevardo refreshes the browser (completed)" width="1920"/>
+                <img src="6437e67d96c628efe2026ce6edb0bfd6fd11efb8ab44447e02bd686e549275d3.png" title=" Nevardo seleccionar producto" width="1920"/>
+                <img src="6a845431d9221ac2481983aefd19672193251010b4293d919f89759dd3e212d4.png" title=" Nevardo clicks on Boton seleccionar tienda" width="1920"/>
+                <img src="6d255b2f8d5348d328492e592ff9ae1e8c2d3023589002e6f3b53864a1a51cc7.png" title=" Nevardo clicks on Boton seleccionar tienda (completed)" width="1920"/>
+                <img src="6d255b2f8d5348d328492e592ff9ae1e8c2d3023589002e6f3b53864a1a51cc7.png" title=" Nevardo clicks on Campo seleccionar ciudad" width="1920"/>
+                <img src="381cea84b3abba8bb660d05c14d8b0587c589e269270a2ebf548102cf19aeb77.png" title=" Nevardo clicks on Campo seleccionar ciudad (completed)" width="1920"/>
+                <img src="381cea84b3abba8bb660d05c14d8b0587c589e269270a2ebf548102cf19aeb77.png" title=" Nevardo enters 'Medellin' into Campo seleccionar ciudad" width="1920"/>
+                <img src="ea3031dc4be2c6469a89da1548eb1d610e10f1feb7beab7a48d7320155212ac7.png" title=" Nevardo enters 'Medellin' into Campo seleccionar ciudad (completed)" width="1920"/>
+                <img src="ea3031dc4be2c6469a89da1548eb1d610e10f1feb7beab7a48d7320155212ac7.png" title=" Nevardo types 'ENTER' in Campo seleccionar ciudad" width="1920"/>
+                <img src="65eb7db3964d7572b0f9041281702c542691c37144e0ba31f9a806c1b62572aa.png" title=" Nevardo types 'ENTER' in Campo seleccionar ciudad (completed)" width="1920"/>
+                <img src="65eb7db3964d7572b0f9041281702c542691c37144e0ba31f9a806c1b62572aa.png" title=" Nevardo clicks on Campo seleccionar tienda de su interes" width="1920"/>
+                <img src="114f4c0d65e080bbd3f2dae87de3e626dcb691f1a1b9f3912b074888cc3c647b.png" title=" Nevardo clicks on Campo seleccionar tienda de su interes (completed)" width="1920"/>
+                <img src="114f4c0d65e080bbd3f2dae87de3e626dcb691f1a1b9f3912b074888cc3c647b.png" title=" Nevardo types 'ENTER' in Campo seleccionar tienda de su interes" width="1920"/>
+                <img src="d48f1b70886773de015ad4501aafecd350122834c8ae5ddac3ecded7574a70d9.png" title=" Nevardo types 'ENTER' in Campo seleccionar tienda de su interes (completed)" width="1920"/>
+                <img src="d48f1b70886773de015ad4501aafecd350122834c8ae5ddac3ecded7574a70d9.png" title=" Nevardo clicks on Boton seleccionar direccion" width="1920"/>
+                <img src="b969775eab9088a8e0e960d8efaa6ba9cd46b5f84741884b57caf5f668d763ee.png" title=" Nevardo clicks on Boton seleccionar direccion (completed)" width="1920"/>
+                <img src="b969775eab9088a8e0e960d8efaa6ba9cd46b5f84741884b57caf5f668d763ee.png" title=" Nevardo clicks on Cerrar ventana de confirmacion direccion" width="1920"/>
+                <img src="e59e01338421bc0bd413b54d6cd77064e38b12e3c223b1eee2eb4bfd897edd2e.png" title=" Nevardo clicks on Cerrar ventana de confirmacion direccion (completed)" width="1920"/>
+                <img src="c16c42d0c0bd81d57b94921cefcbfc7ae6f22083ef0cec6e4dcb27026a436756.png" title=" Nevardo clicks on Campo buscar producto" width="1920"/>
+                <img src="974ae68e56f18138894bcfde7ed966434d11062ad02c59a2f484e0a25d8801d4.png" title=" Nevardo clicks on Campo buscar producto (completed)" width="1920"/>
+                <img src="974ae68e56f18138894bcfde7ed966434d11062ad02c59a2f484e0a25d8801d4.png" title=" Nevardo enters 'camaron titi' into Campo busqueda" width="1920"/>
+                <img src="8adc12ae6303dd09fffe9bb9f45e28b5df71039665500c2820cc7dadddadc1c0.png" title=" Nevardo enters 'camaron titi' into Campo busqueda (completed)" width="1920"/>
+                <img src="8adc12ae6303dd09fffe9bb9f45e28b5df71039665500c2820cc7dadddadc1c0.png" title=" Nevardo clicks on Boton Lupa ubicado en el campo buscador" width="1920"/>
+                <img src="80e89fb5e88521ae3fa623dead700db3194640d42d64ef94b2b447fbd193291c.png" title=" Nevardo clicks on Boton Lupa ubicado en el campo buscador (completed)" width="1920"/>
+                <img src="80e89fb5e88521ae3fa623dead700db3194640d42d64ef94b2b447fbd193291c.png" title=" Nevardo seleccionar producto (completed)" width="1920"/>
+                <img src="80e89fb5e88521ae3fa623dead700db3194640d42d64ef94b2b447fbd193291c.png" title=" Nevardo agregar carrito compra" width="1920"/>
+                <img src="ecc4fc1e05c4425d0b842351a2838c7e00ccec49a74cf0ce3a2f771f1f3c4c6d.png" title=" Nevardo clicks on Elegir producto" width="1920"/>
+                <img src="5e64343a6c69dfb03455ffa9a9ae7cc5fa129974c2d31f477be6dfca5916b452.png" title=" Nevardo clicks on Elegir producto (completed)" width="1920"/>
+                <img src="d03f2db2d2536e39cdfe1104854b4fdacef279a5ab1a48eba3ecd3dad65907c8.png" title=" Nevardo clicks on Boton carrito de compra" width="1920"/>
+                <img src="a07591e908fd0b29eca7036c2679b60b8d6e9b39133f699ee166d07e1b509ebb.png" title=" Nevardo clicks on Boton carrito de compra (completed)" width="1920"/>
+                <img src="f8cb874b595a9a65ce63e40251ba02084daba455e7deb8f8ec756baa35382448.png" title=" Nevardo clicks on Boton de ir a pagar" width="1920"/>
+                <img src="4e6e33258fe71c21127a528fbec2d1bcd4a266f0a99bf5b76fafd200b48d53d5.png" title=" Nevardo clicks on Boton de ir a pagar (completed)" width="1920"/>
+                <img src="4e6e33258fe71c21127a528fbec2d1bcd4a266f0a99bf5b76fafd200b48d53d5.png" title=" Nevardo agregar carrito compra (completed)" width="1920"/>
+                <img src="4e6e33258fe71c21127a528fbec2d1bcd4a266f0a99bf5b76fafd200b48d53d5.png" title=" Cuando el usuario ingresa los datos de registro selecciona los productos (completed)" width="1920"/>
+                <img src="eab176a82ce39319d99f2a6c69da38b99f3922e3738262d04b01829391c2131e.png" title=" Y se dirige apagar los productos" width="1920"/>
+                <img src="eab176a82ce39319d99f2a6c69da38b99f3922e3738262d04b01829391c2131e.png" title=" Nevardo realizar pago" width="1920"/>
+                <img src="a064f7f115a97e67fc862bafaa2db714b266f124a71e2b0eb8ee1ba11094feb7.png" title=" Nevardo enters 'Nevardo Antonio' into Nombre del usuario apagar la factura" width="1920"/>
+                <img src="a064f7f115a97e67fc862bafaa2db714b266f124a71e2b0eb8ee1ba11094feb7.png" title=" Nevardo enters 'Ospina Zu&ntilde;iga' into Apellido del usuario apagar la factura" width="1920"/>
+                <img src="3f1a34049b9cad8796b5cb5f1cc1203d7219169757c13fb141d9e8cc8d326731.png" title=" Nevardo enters 'Ospina Zu&ntilde;iga' into Apellido del usuario apagar la factura (completed)" width="1920"/>
+                <img src="3f1a34049b9cad8796b5cb5f1cc1203d7219169757c13fb141d9e8cc8d326731.png" title=" Nevardo enters '3147655512' into Celular del usuario apagar la factura" width="1920"/>
+                <img src="a02d70e9b9d0cfc4c05643f7a4f8263724dc216d31ef8e5f5316a0192c4fd466.png" title=" Nevardo enters '3147655512' into Celular del usuario apagar la factura (completed)" width="1920"/>
+                <img src="a02d70e9b9d0cfc4c05643f7a4f8263724dc216d31ef8e5f5316a0192c4fd466.png" title=" Nevardo enters '1093216364' into Documento del usuario apagar la factura" width="1920"/>
+                <img src="766239f46ad581c2b6ffd459dc342b40a7c72518b4301a3e2203cf93a107fb08.png" title=" Nevardo enters '1093216364' into Documento del usuario apagar la factura (completed)" width="1920"/>
+                <img src="766239f46ad581c2b6ffd459dc342b40a7c72518b4301a3e2203cf93a107fb08.png" title=" Nevardo enters 'Nevardo Antonio' into Nombre del usuario apagar la factura" width="1920"/>
+                <img src="9db3622e1180eca2f6d868295f99427e459a3e194d87f7958376b9ef03acf4a3.png" title=" Nevardo enters 'Nevardo Antonio' into Nombre del usuario apagar la factura (completed)" width="1920"/>
+                <img src="9db3622e1180eca2f6d868295f99427e459a3e194d87f7958376b9ef03acf4a3.png" title=" Nevardo enters 'Ospina Zu&ntilde;iga' into Apellido del usuario apagar la factura" width="1920"/>
+                <img src="88f485e2da9417f4b01fed99c75290fd09776dcbb689b4b6d848419fc53c68b0.png" title=" Nevardo enters 'Ospina Zu&ntilde;iga' into Apellido del usuario apagar la factura (completed)" width="1920"/>
+                <img src="88f485e2da9417f4b01fed99c75290fd09776dcbb689b4b6d848419fc53c68b0.png" title=" Nevardo clicks on Boton confirmar campos de datos" width="1920"/>
+                <img src="86c65b5d02d51e586c07b81d9fb2efcb2524a925d368e9e67dc347d15aefd0dc.png" title=" Nevardo clicks on Boton confirmar campos de datos (completed)" width="1920"/>
+                <img src="89010e59099dd2f0029812bf8f4452df3b6306e76e40df1958663c49faabbca3.png" title=" Nevardo clicks on Fecha de entrega del producto" width="1920"/>
+                <img src="2189c198d3f1776198f118bea61a6541c0a5ab72940d0071205ed8da97c198a8.png" title=" Nevardo clicks on Fecha de entrega del producto (completed)" width="1920"/>
+                <img src="2189c198d3f1776198f118bea61a6541c0a5ab72940d0071205ed8da97c198a8.png" title=" Nevardo clicks on Seleccionar fecha de entrega del producto" width="1920"/>
+                <img src="5bf54bb9ae4d04c7174c691ce9f1aa9c175c5eb6a3b7b3ba2cb958eea411e0f9.png" title=" Nevardo clicks on Seleccionar fecha de entrega del producto (completed)" width="1920"/>
+                <img src="5bf54bb9ae4d04c7174c691ce9f1aa9c175c5eb6a3b7b3ba2cb958eea411e0f9.png" title=" Nevardo clicks on Boton para Continuar a la pagina de pago" width="1920"/>
+                <img src="54337b5142cc22ff8463670fd82363e7148899b95c9874abaac55b0b8dce8711.png" title=" Nevardo clicks on Boton para Continuar a la pagina de pago (completed)" width="1920"/>
+                <img src="54337b5142cc22ff8463670fd82363e7148899b95c9874abaac55b0b8dce8711.png" title=" Nevardo clicks on Forma de pago por pse" width="1920"/>
+                <img src="55102a2426941656caf50be50c0685784c87ee1032a0d34eb405f2636d4e4e7a.png" title=" Nevardo clicks on Forma de pago por pse (completed)" width="1920"/>
+                <img src="b1157573acde1bae250bf1fc8e5e506b2a4aab51f4d25558564c50d94ef5b155.png" title=" Nevardo clicks on Boton para pagar producto" width="1920"/>
+                <img src="8c8920e8f998b82b552edf4871a2df2089be88fb0c90fe6ddf5843455ef7f6a5.png" title=" Nevardo clicks on Boton para pagar producto (completed)" width="1920"/>
+                <img src="8c8920e8f998b82b552edf4871a2df2089be88fb0c90fe6ddf5843455ef7f6a5.png" title=" Nevardo realizar pago (completed)" width="1920"/>
+                <img src="8c8920e8f998b82b552edf4871a2df2089be88fb0c90fe6ddf5843455ef7f6a5.png" title=" Y se dirige apagar los productos (completed)" width="1920"/>
+                <img src="1551ce52fec82dcb5cc09c33d019a37388e339de1eb3a578d80bc76a60cf0db8.png" title=" Entonces el usuario debe ver un mensaje pago exitoso" width="1920"/>
+                <img src="1551ce52fec82dcb5cc09c33d019a37388e339de1eb3a578d80bc76a60cf0db8.png" title=" Then mensaje confirmacion compra should be 'Detalles de tu compra'" width="1920"/>
+                <img src="fd665146530dccabe446d5ba989280dc63483ac994ec794590ce8f51776240d7.png" title=" Then mensaje confirmacion compra should be 'Detalles de tu compra' (completed)" width="1920"/>
+                <img src="fd665146530dccabe446d5ba989280dc63483ac994ec794590ce8f51776240d7.png" title=" Entonces el usuario debe ver un mensaje pago exitoso (completed): <span class='success-color'>SUCCESS</span>" width="1920"/>
+            </div>
+        </div>
+
+
+    </div>
+</div>
+<div id="beforefooter"></div>
+<div id="bottomfooter">
+    <span class="version">Serenity BDD version 2.2.9</span>
+</div>
+</body>
+</html>

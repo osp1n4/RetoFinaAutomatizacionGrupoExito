@@ -10,6 +10,3 @@ public class ConfirmacionCompraExitosa extends PageObject {
             .located(By.cssSelector("body div div div div div h3 strong"));
 
 }
-
-
-//By.xpath("//strong[normalize-space()='Detalles de tu compra']")
